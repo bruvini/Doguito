@@ -154,8 +154,13 @@ function checaDigitoVerificador(cpf, multiplicador) {
     return false
 }
 
-function confirmaDigito(soma) {
-    return 11 - (soma % 11)
+function confirmaDigito(soma){
+    let restoDaDivisao = soma % 11
+    if(restoDaDivisao >= 2){
+        return 11 - restoDaDivisao
+    } else {
+        return 0
+    }
 }
 
 function recuperarCEP(input) {
